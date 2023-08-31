@@ -28,7 +28,7 @@ class HistoryTransfer(models.Model):
         verbose_name="Количество"
     )
     def __str__(self):
-        return self.amount 
+        return self.from_user
     
     class Meta:
         verbose_name = "История"

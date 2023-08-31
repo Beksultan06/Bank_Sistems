@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from .models import Username
-# from apps.historytransfer.serializers import HistoryTransferSerializer
+from apps.transfer.serializers import HistoryTransferSerializer
 
 class UserSerializers(serializers.ModelSerializer):
     class Meta:
@@ -9,7 +9,7 @@ class UserSerializers(serializers.ModelSerializer):
         fields = ('id','username', 'email', 'phone_number', 'created_at', 'age', 'balance')
 
 class UserDetailSerializer(serializers.ModelSerializer):
-    # from_user = HistoryTransferSerializer(read_only=True, many=True)
+    from_user = HistoryTransferSerializer(read_only=True, many=True)
     class Meta:
         model = Username
         fields = ('id',  'username', 'email', 
